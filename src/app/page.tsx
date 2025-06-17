@@ -5,6 +5,7 @@ import HomeFooter from "@/components/layouts/home-footer";
 import How from "./home/how";
 import Testimonial from "./home/testimonial";
 import Faq from "./home/faq";
+import Cta from "./home/cta";
 
 const Home = () => {
   return (
@@ -24,7 +25,9 @@ const Home = () => {
         <Faq />
       </section>
 
-      <section id="contact"></section>
+      <section id="contact">
+        <Cta />
+      </section>
 
       <HomeFooter />
     </>
