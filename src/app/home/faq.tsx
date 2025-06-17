@@ -33,13 +33,13 @@ const Faq = () => {
   };
 
   return (
-    <section className="bg-white min-h-screen py-20 px-4 md:px-8">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
+    <section className="bg-white ">
+      <h1 className="home-header pt-36 px-6 text-center font-bold">
         Frequently Asked Questions
       </h1>
 
       <motion.div
-        className="max-w-5xl mx-auto space-y-4"
+        className="max-w-5xl mx-auto p-6"
         initial="hidden"
         animate="visible"
         variants={{
@@ -58,7 +58,7 @@ const Faq = () => {
             isOpen={openIndex === index}
             onToggle={() => toggleItem(index)}
           >
-            <div className="max-w-[852px] border-t border-[#EBEBEB] py-4 text-gray-700 text-sm">
+            <div className="max-w-[852px] border-t border-[#EBEBEB] py-4 ">
               {item.content}
             </div>
           </FaqItem>

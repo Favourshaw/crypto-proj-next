@@ -18,10 +18,10 @@ const FaqItem: React.FC<FaqItemProps> = ({
   onToggle,
 }) => {
   return (
-    <div className="border rounded-lg border-[#EBEBEB] px-4 py-3 md:px-6 md:py-4">
+    <div className="border rounded-lg border-[#EBEBEB] p-4 m-4">
       <button
         onClick={onToggle}
-        className="w-full flex justify-between items-center text-left text-[#1b1b1b] font-medium text-base md:text-lg"
+        className="w-full flex justify-between items-center text-left  text-[#1b1b1b] home-text"
       >
         <span>{title}</span>
         <span className="text-xl">{isOpen ? <FiMinus /> : <FiPlus />}</span>
@@ -37,9 +37,7 @@ const FaqItem: React.FC<FaqItemProps> = ({
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pt-3 text-sm md:text-base text-[#4a4a4a]">
-              {children}
-            </div>
+            <div className="pt-2 home-text-sm">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>
