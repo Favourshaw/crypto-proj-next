@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const testimonials = [
   {
@@ -40,7 +39,7 @@ const testimonials = [
     name: "Tunde B.",
     role: "Investment Advisor, Ibadan",
     content:
-      "What stands out is the consistency. Every single transaction, regardless of size, is processed with the same efficiency.  I've recommended this platform to all my clients who deal with cryptocurrency.",
+      "What stands out is the consistency. Every single transaction, regardless of size, is processed with the same efficiency.  I've recommended this platform to all my clients who deal with cryptocurrency,",
     stars: 5,
     img: "/assets/home/halima.png",
   },
@@ -52,6 +51,7 @@ const testimonials = [
     stars: 5,
     img: "/assets/home/halima.png",
   },
+
   {
     name: "Victor O.",
     role: "Tech Entrepreneur, Kaduna",
@@ -74,81 +74,96 @@ export function Row1() {
         className="row-span-2 bg-white p-0 rounded-2xl border hidden lg:flex border-[#E9ECF2] flex-col"
         variants={cardVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate="visible"
       >
-        <Image
-          src={testimonials[0].img}
-          alt={testimonials[0].name}
-          width={400}
-          height={300}
-          className="w-full h-full object-cover rounded-t-2xl"
-        />
+        <div className="flex items-center gap-4">
+          <img
+            src="/assets/home/nedu-L.png"
+            alt="Victor"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="flex gap-4 p-6 flex-col">
-          <p className="home-text-xs mt-2">{testimonials[0].content}</p>
+          <p className="home-text-xs mt-2 flex-grow">
+            I needed a reliable way to convert my crypto earnings to naira for
+            business expenses. Since discovering this platform 3 months ago,
+            I've completed over 50 transactions without a single issue.
+          </p>
           <div>
-            <p className="font-semibold text-sm text-black">
-              {testimonials[0].name}
-            </p>
-            <p className="text-sm text-gray-500">{testimonials[0].role}</p>
+            <p className="font-semibold text-sm text-black">Chinedu O.</p>
+            <p className="text-sm text-gray-500">Business Owner, Lagos</p>
             <div className="text-yellow-500 text-sm mt-2">★★★★★</div>
           </div>
         </div>
       </motion.div>
-
-      {testimonials.slice(0, 1).map((t, index) => (
+      {testimonials.slice(0, 1).map((testimonial, index) => (
         <motion.div
           key={index}
           className="bg-white p-5 rounded-2xl border lg:hidden border-[#E9ECF2]"
           variants={cardVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
+          transition={{ delay: index * 0.1 }}
         >
           <div className="flex items-center gap-4">
-            <Image
-              src={t.img}
-              alt={t.name}
-              width={48}
-              height={48}
+            <img
+              src={testimonial.img}
+              alt={testimonial.name}
               className="w-12 h-12 rounded-full object-cover"
             />
             <div>
-              <p className="font-semibold text-black text-sm">{t.name}</p>
-              <p className="text-sm text-gray-500">{t.role}</p>
+              <p className="font-semibold text-black text-sm">
+                {testimonial.name}
+              </p>
+              <p className="text-sm text-gray-500">{testimonial.role}</p>
             </div>
           </div>
-          <div className="text-star text-sm mt-2">{"★".repeat(t.stars)}</div>
-          <p className="home-text-xs mt-2">{t.content}</p>
+          <div className="text-star text-sm mt-2">
+            {"★".repeat(testimonial.stars)}
+          </div>
+          <p className="home-text-xs mt-2">{testimonial.content}</p>
         </motion.div>
       ))}
 
-      {testimonials.slice(1, 2).map((t, index) => (
+      {testimonials.slice(1, 2).map((testimonial, index) => (
         <motion.div
           key={index}
           className="bg-white p-5 rounded-2xl border border-[#E9ECF2]"
           variants={cardVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
+          transition={{ delay: index * 0.1 }}
         >
-          <div className="flex items-center gap-4">
-            <Image
-              src={t.img}
-              alt={t.name}
-              width={48}
-              height={48}
-              className="w-12 h-12 rounded-full object-cover"
-            />
+          <div className="flex justify-between gap-3">
+            <div className="w-full hidden lg:block flex-auto">
+              <img
+                src={testimonial.img}
+                alt={testimonial.name}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+            </div>
             <div>
-              <p className="font-semibold text-[13.44px] text-black">
-                {t.name}
-              </p>
-              <p className="text-[13.44px] text-gray-500">{t.role}</p>
+              <div className="flex items-center gap-4">
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full lg:hidden object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-[13.44px] text-black">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-[13.44px] text-gray-500">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </div>
+              <div className="text-star text-sm mt-2">
+                {"★".repeat(testimonial.stars)}
+              </div>
+              <p className="home-text-xs mt-2">{testimonial.content}</p>
             </div>
           </div>
-          <div className="text-star text-sm mt-2">{"★".repeat(t.stars)}</div>
-          <p className="home-text-xs mt-2">{t.content}</p>
         </motion.div>
       ))}
     </div>
@@ -158,73 +173,73 @@ export function Row1() {
 export function Row2() {
   return (
     <div className="grid col-span-3 md:col-span-2 gap-4 h-fit">
-      {testimonials.slice(2, 3).map((t, index) => (
+      {testimonials.slice(2, 3).map((testimonial, index) => (
         <motion.div
           key={index}
           className="bg-white p-5 lg:p-0 rounded-2xl border border-[#E9ECF2]"
           variants={cardVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
+          transition={{ delay: index * 0.1 }}
         >
-          <div className="flex flex-col lg:flex-row gap-4">
-            <div className="hidden lg:block w-1/2">
-              <Image
-                src={t.img}
-                alt={t.name}
-                width={400}
-                height={300}
-                className="rounded-2xl w-full object-cover"
+          <div className="flex justify-between gap-3">
+            <div className="w-full hidden lg:block lg:flex-1/2">
+              <img
+                src={testimonial.img}
+                alt={testimonial.name}
+                className="w-full rounded-2xl object-cover"
               />
             </div>
-            <div className="lg:py-5 flex flex-col justify-center w-full">
+            <div className="lg:py-5 lg:flex-1/2 flex flex-col lg:flex-col-reverse lg:justify-end">
               <div className="flex items-center gap-4">
-                <Image
-                  src={t.img}
-                  alt={t.name}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full object-cover lg:hidden"
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full lg:hidden object-cover"
                 />
                 <div>
                   <p className="font-semibold text-[13.44px] text-black">
-                    {t.name}
+                    {testimonial.name}
                   </p>
-                  <p className="text-[13.44px] text-gray-500">{t.role}</p>
+                  <p className="text-[13.44px] text-gray-500">
+                    {testimonial.role}
+                  </p>
                 </div>
               </div>
               <div className="text-star text-sm mt-2">
-                {"★".repeat(t.stars)}
+                {"★".repeat(testimonial.stars)}
               </div>
-              <p className="home-text-xs mt-2">{t.content}</p>
+              <p className="home-text-xs mt-2">{testimonial.content}</p>
             </div>
           </div>
         </motion.div>
       ))}
-      {testimonials.slice(3, 5).map((t, index) => (
+      {testimonials.slice(3, 5).map((testimonial, index) => (
         <motion.div
           key={index}
           className="bg-white p-5 rounded-2xl border border-[#E9ECF2]"
           variants={cardVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
+          transition={{ delay: index * 0.1 }}
         >
           <div className="flex items-center gap-4">
-            <Image
-              src={t.img}
-              alt={t.name}
-              width={48}
-              height={48}
+            <img
+              src={testimonial.img}
+              alt={testimonial.name}
               className="w-12 h-12 rounded-full object-cover"
             />
             <div>
-              <p className="font-semibold text-black text-sm">{t.name}</p>
-              <p className="text-sm text-gray-500">{t.role}</p>
+              <p className="font-semibold text-black text-sm">
+                {testimonial.name}
+              </p>
+              <p className="text-sm text-gray-500">{testimonial.role}</p>
             </div>
           </div>
-          <div className="text-star text-sm mt-2">{"★".repeat(t.stars)}</div>
-          <p className="home-text-xs mt-2">{t.content}</p>
+          <div className="text-star text-sm mt-2">
+            {"★".repeat(testimonial.stars)}
+          </div>
+          <p className="home-text-xs mt-2">{testimonial.content}</p>
         </motion.div>
       ))}
     </div>
@@ -234,32 +249,45 @@ export function Row2() {
 export function Row3() {
   return (
     <div className="grid col-span-3 lg:col-span-1 md:grid-cols-2 lg:grid-cols-1 gap-4 h-fit">
-      {testimonials.slice(5, 8).map((t, index) => (
+      {testimonials.slice(5, 8).map((testimonial, index) => (
         <motion.div
           key={index}
           className="bg-white p-5 rounded-2xl border border-[#E9ECF2]"
           variants={cardVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
+          transition={{ delay: index * 0.1 }}
         >
-          <div className="flex items-center gap-4">
-            <Image
-              src={t.img}
-              alt={t.name}
-              width={48}
-              height={48}
-              className="w-12 h-12 rounded-full object-cover"
-            />
+          <div className="flex justify-between gap-3">
+            <div className="w-full hidden lg:block flex-auto">
+              <img
+                src={testimonial.img}
+                alt={testimonial.name}
+                className="w-10 h-10 rounded-full object-cover"
+              />
+            </div>
             <div>
-              <p className="font-semibold text-[13.44px] text-black">
-                {t.name}
-              </p>
-              <p className="text-[13.44px] text-gray-500">{t.role}</p>
+              <div className="flex items-center gap-4">
+                <img
+                  src={testimonial.img}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full lg:hidden object-cover"
+                />
+                <div>
+                  <p className="font-semibold text-[13.44px] text-black">
+                    {testimonial.name}
+                  </p>
+                  <p className="text-[13.44px] text-gray-500">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </div>
+              <div className="text-star text-sm mt-2">
+                {"★".repeat(testimonial.stars)}
+              </div>
+              <p className="home-text-xs mt-2">{testimonial.content}</p>
             </div>
           </div>
-          <div className="text-star text-sm mt-2">{"★".repeat(t.stars)}</div>
-          <p className="home-text-xs mt-2">{t.content}</p>
         </motion.div>
       ))}
     </div>

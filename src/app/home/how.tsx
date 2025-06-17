@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function How() {
   return (
     <div className="bg-white">
-      <h2 className="home-header font-bold text-center p-8 lg:p-12">
+      <h2 className="home-header font-bold  text-center p-8 lg:p-12">
         How it works
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-center px-4 sm:px-7">
