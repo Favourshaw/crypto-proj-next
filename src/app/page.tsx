@@ -4,6 +4,7 @@ import Navbar from "@/components/layouts/home-nav";
 import HomeFooter from "@/components/layouts/home-footer";
 import How from "./home/how";
 import Testimonial from "./home/testimonial";
+import Faq from "./home/faq";
 
 const Home = () => {
   return (
@@ -19,7 +20,9 @@ const Home = () => {
       <section id="">
         <Testimonial />
       </section>
-      <section id="faq"></section>
+      <section id="faq">
+        <Faq />
+      </section>
 
       <section id="contact"></section>
 
