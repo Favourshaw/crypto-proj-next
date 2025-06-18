@@ -68,7 +68,6 @@ const Navbar = () => {
         <div className="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-10 py-4 md:py-5">
           <div className="w-24 h-6 bg-gray-300 rounded" />
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 text-sm relative">
             {navLinks.map((link) => (
               <div
@@ -102,7 +101,6 @@ const Navbar = () => {
             <Button variant="home">Login</Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="block md:hidden z-50">
             <button
               onClick={() => setOpen((prev) => !prev)}
@@ -114,7 +112,6 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Sidebar */}
       <div
         ref={sidebarRef}
         className={`flex md:hidden fixed top-0 left-0 h-full w-64 bg-home-bg text-white p-6 flex-col gap-6 transition-transform duration-300 z-40 ${
@@ -137,10 +134,6 @@ const Navbar = () => {
             {link.label}
           </div>
         ))}
-
-        <Button variant="home" onClick={() => alert("Button clicked!")}>
-          Click Me
-        </Button>
       </div>
     </div>
   );
