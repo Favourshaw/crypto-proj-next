@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../common/buttons";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 const navLinks = [
   { id: "home", label: "Home" },
@@ -66,7 +67,19 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-[1200px] mx-auto flex justify-between items-center px-6 md:px-10 py-4 md:py-5">
-          <div className="w-24 h-6 bg-gray-300 rounded" />
+          <Image
+            src="/assets/logo.svg"
+            alt="Company Logo"
+            width={150}
+            height={50}
+            className="cursor-pointer"
+            onClick={() => {
+              document
+                .getElementById("home")
+                ?.scrollIntoView({ behavior: "smooth" });
+              setActive("home");
+            }}
+          />
 
           <div className="hidden md:flex space-x-6 text-sm relative">
             {navLinks.map((link) => (

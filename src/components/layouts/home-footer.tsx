@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function HomeFooter() {
@@ -13,7 +14,13 @@ export default function HomeFooter() {
     >
       <div className="max-w-[1200px] px-6 mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 pt-12  gap-10 home-text-xs border-t border-gray-600 text-gray-300">
         <div className="space-y-6 col-span-1 lg:col-span-3">
-          <h2 className="home-text font-semibold text-gray-300">Logo</h2>
+          <Image
+            src="/assets/logo.svg"
+            alt="Company Logo"
+            width={150}
+            height={50}
+            className="mb-4"
+          />
           <div>
             <p className="mb-2">Address</p>
             <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
