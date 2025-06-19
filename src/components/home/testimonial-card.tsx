@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -76,8 +77,10 @@ export function Row1() {
         initial="hidden"
         animate="visible"
       >
-        <div className="flex items-center gap-4">
-          <img
+        <div className="relative  flex items-center gap-4">
+          <Image
+            width={200}
+            height={200}
             src="/assets/home/nedu-L.png"
             alt="Victor"
             className="w-full h-full object-cover"
@@ -87,7 +90,7 @@ export function Row1() {
           <p className="home-text-xs mt-2 flex-grow">
             I needed a reliable way to convert my crypto earnings to naira for
             business expenses. Since discovering this platform 3 months ago,
-            I've completed over 50 transactions without a single issue.
+            I&apos;ve completed over 50 transactions without a single issue.
           </p>
           <div>
             <p className="font-semibold text-sm text-black">Chinedu O.</p>
@@ -106,7 +109,9 @@ export function Row1() {
           transition={{ delay: index * 0.1 }}
         >
           <div className="flex items-center gap-4">
-            <img
+            <Image
+              width={48}
+              height={48}
               src={testimonial.img}
               alt={testimonial.name}
               className="w-12 h-12 rounded-full object-cover"
@@ -136,7 +141,9 @@ export function Row1() {
         >
           <div className="flex justify-between gap-3">
             <div className="w-full hidden lg:block flex-auto">
-              <img
+              <Image
+                width={40}
+                height={40}
                 src={testimonial.img}
                 alt={testimonial.name}
                 className="w-10 h-10 rounded-full object-cover"
@@ -144,7 +151,9 @@ export function Row1() {
             </div>
             <div>
               <div className="flex items-center gap-4">
-                <img
+                <Image
+                  width={48}
+                  height={48}
                   src={testimonial.img}
                   alt={testimonial.name}
                   className="w-12 h-12 rounded-full lg:hidden object-cover"
@@ -183,8 +192,9 @@ export function Row2() {
           transition={{ delay: index * 0.1 }}
         >
           <div className="flex justify-between gap-3">
-            <div className="w-full hidden lg:block lg:flex-1/2">
-              <img
+            <div className=" relative  w-full hidden lg:block lg:flex-1/2">
+              <Image
+                fill
                 src={testimonial.img}
                 alt={testimonial.name}
                 className="w-full rounded-2xl object-cover"
@@ -192,7 +202,9 @@ export function Row2() {
             </div>
             <div className="lg:py-5 lg:flex-1/2 flex flex-col lg:flex-col-reverse lg:justify-end">
               <div className="flex items-center gap-4">
-                <img
+                <Image
+                  width={48}
+                  height={48}
                   src={testimonial.img}
                   alt={testimonial.name}
                   className="w-12 h-12 rounded-full lg:hidden object-cover"
@@ -224,9 +236,11 @@ export function Row2() {
           transition={{ delay: index * 0.1 }}
         >
           <div className="flex items-center gap-4">
-            <img
+            <Image
               src={testimonial.img}
               alt={testimonial.name}
+              width={48}
+              height={48}
               className="w-12 h-12 rounded-full object-cover"
             />
             <div>
@@ -260,7 +274,9 @@ export function Row3() {
         >
           <div className="flex justify-between gap-3">
             <div className="w-full hidden lg:block flex-auto">
-              <img
+              <Image
+                width={40}
+                height={40}
                 src={testimonial.img}
                 alt={testimonial.name}
                 className="w-10 h-10 rounded-full object-cover"
@@ -268,7 +284,9 @@ export function Row3() {
             </div>
             <div>
               <div className="flex items-center gap-4">
-                <img
+                <Image
+                  width={48}
+                  height={48}
                   src={testimonial.img}
                   alt={testimonial.name}
                   className="w-12 h-12 rounded-full lg:hidden object-cover"
