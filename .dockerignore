@@ -1,0 +1,6 @@
+next.config.ts
+.git
+.gitignore
+Dockerfile
+.docker-ignore
+node_modules
