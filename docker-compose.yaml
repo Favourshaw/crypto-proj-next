@@ -3,6 +3,6 @@ services:
     image: ghcr.io/xircarstudio/kwickswap:latest
     build:
       context: .
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
     ports:
       - "8080:3000"
