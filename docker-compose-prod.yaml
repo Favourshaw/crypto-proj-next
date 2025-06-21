@@ -1,5 +1,6 @@
 services:
   app:
+    image: ghcr.io/xircarstudio/kwickswap:latest
     build:
       context: .
       dockerfile: Dockerfile.prod
