@@ -39,5 +39,5 @@ COPY --from=build /app/node_modules ./node_modules
 
 EXPOSE 3000
 
-# You can replace this with `node server.js` if using standalone output
+
 CMD ["npm", "start"]
