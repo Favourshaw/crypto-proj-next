@@ -28,7 +28,6 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-# Copy built output from previous stage
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/public ./public
 COPY --from=build /app/package.json ./package.json
