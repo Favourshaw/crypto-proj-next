@@ -17,7 +17,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
-        run: docker build -t next-app .
+        run: docker build -t kwickswap .
 
       - name: Copy files to VPS via SSH
         uses: appleboy/scp-action@v0.1.7
@@ -36,6 +36,6 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             cd /apps/kwickswap
-            docker stop next-app || true && docker rm next-app || true
-            docker build -t next-app .
-            docker run -d --name next-app -p 80:3000 next-app
+            docker stop kwickswap || true && docker rm kwickswap || true
+            docker build -t kwickswap .
+            docker run -d --name kwickswap -p 80:3000 kwickswap
